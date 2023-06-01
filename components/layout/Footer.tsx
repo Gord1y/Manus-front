@@ -17,7 +17,9 @@ const Footer: FC<PropsWithChildren<IFooter>> = ({ title, className }) => {
 		>
 			<div className='w-full h-px bg-black' />
 			<div className='flex justify-between flex-row text-xs sm:text-sm'>
-				<p className='text-grey'>© 2023 {title}. Усі права захищені.</p>
+				<p className='text-grey'>
+					© 2023 All Rights Reserved. Copyright © 2023 {title}
+				</p>
 				<Link href='/policy'>Policy page</Link>
 			</div>
 		</footer>

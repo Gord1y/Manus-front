@@ -33,7 +33,7 @@ body {
 	scroll-behavior: smooth;
 	text-rendering: optimizeSpeed;
 	line-height: 1.5;
-	@apply bg-slate-100 text-sm text-gray-950;
+	@apply text-sm bg-background text-black;
 }
 
 ul[class],

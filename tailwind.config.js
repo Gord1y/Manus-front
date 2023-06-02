@@ -1,4 +1,11 @@
 /** @type {import('tailwindcss').Config} */
+
+const twcolors = require('tailwindcss/colors')
+const colors = {
+	...twcolors,
+	background: '#F2EDE7'
+}
+
 module.exports = {
 	content: [
 		'./pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -6,6 +13,7 @@ module.exports = {
 		'./app/**/*.{js,ts,jsx,tsx,mdx}'
 	],
 	theme: {
+		colors,
 		extend: {
 			fontSize: {
 				xxs: '0.65rem',

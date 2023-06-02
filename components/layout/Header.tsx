@@ -15,7 +15,7 @@ const Header: FC<PropsWithChildren<IHeader>> = ({
 	return (
 		<header
 			className={cn(
-				'w-full py-3 sm:py-5 fixed bg-bg-color z-10 top-0 bg-slate-100',
+				'w-full py-3 sm:py-5 fixed bg-bg-color z-10 top-0 bg-background',
 				className
 			)}
 		>

@@ -21,16 +21,22 @@ const Section: FC<ISection> = ({
 	return (
 		<section
 			className={cn(
-				'w-full flex',
+				'w-full flex flex-col-reverse',
 				{
-					'flex-row-reverse': position === 'right',
-					'flex-row': position === 'left'
+					'lg:flex-row-reverse': position === 'right',
+					'lg:flex-row': position === 'left'
 				},
 				className
 			)}
 		>
-			<Image width={3500} height={3500} src={img} alt='img' className='w-2/4' />
-			<div className='w-2/4 p-10 flex items-center justify-center flex-col gap-5'>
+			<Image
+				width={3500}
+				height={3500}
+				src={img}
+				alt='img'
+				className='w-full lg:w-2/4'
+			/>
+			<div className='w-full lg:w-2/4 p-10 flex items-center justify-center flex-col gap-5'>
 				<h1 className='text-3xl font-bold'>{title}</h1>
 				<p className='text-lg max-w-2xl'>
 					{description}

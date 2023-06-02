@@ -8,7 +8,10 @@ export interface ILine {
 export const Line: FC<PropsWithChildren<ILine>> = ({ className }) => {
 	return (
 		<div
-			className={cn('w-full h-px bg-black mx-auto max-w-sm my-10', className)}
+			className={cn(
+				'w-11/12 lg:w-full h-px bg-black mx-auto max-w-sm my-10',
+				className
+			)}
 		/>
 	)
 }

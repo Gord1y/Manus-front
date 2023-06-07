@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import '@/styles/policy.scss'
+import '@/src/styles/policy.scss'
 
 const Policy: FC = () => {
 	return (

@@ -1,10 +1,9 @@
 import Image from 'next/image'
 import { FC } from 'react'
 
-import { Line } from '@/components/ui/Line'
-import Section from '@/components/ui/Section'
-
 import img from '@/public/3.jpg'
+import { Line } from '@/src/components/ui/Line'
+import Section from '@/src/components/ui/Section'
 
 const Home: FC = () => {
 	return (

@@ -3,7 +3,7 @@ import Header from '@/src/components/layout/Header'
 import Main from '@/src/components/layout/Main'
 import '@/src/styles/globals.scss'
 
-export default function PolicyLayout({
+export default function RecipeLayout({
 	children
 }: {
 	children: React.ReactNode

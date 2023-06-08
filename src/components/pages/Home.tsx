@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { FC } from 'react'
 
 import img from '@/public/3.jpg'
@@ -46,9 +47,12 @@ const Home: FC = () => {
 						Umami tastes are savory and often found in meat, cheese, and other
 						protein-rich foods.
 					</div>
-					<button className=' text-lg py-3 px-5 border-r-2 bg-white lg:bg-transparent text-red-500 lg:text-white border-white hover:bg-white hover:text-red-500 ease-in-out font-semibold'>
+					<Link
+						href='/recipes'
+						className=' text-lg py-3 px-5 border-r-2 bg-white lg:bg-transparent text-red-500 lg:text-white border-white hover:bg-white hover:text-red-500 ease-in-out font-semibold'
+					>
 						View Recipes
-					</button>
+					</Link>
 				</div>
 				<Image
 					src={img}

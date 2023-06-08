@@ -11,7 +11,7 @@ const HomePage: FC = () => {
 	return (
 		<>
 			<Header title={siteName}>
-				<Link href='/recipe'>Open Recipes</Link>
+				<Link href='/recipes'>Open Recipes</Link>
 			</Header>
 			<Main>
 				<Home />

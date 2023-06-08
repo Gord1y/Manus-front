@@ -1,12 +1,7 @@
 import Link from 'next/link'
 
 import { instance } from '@/src/api/api.interceptor'
-
-interface ICategory {
-	id: number
-	name: string
-	slug: string
-}
+import { ICategory } from '@/src/store/category.interface'
 
 async function getCategories() {
 	const categories = await instance<ICategory[]>({

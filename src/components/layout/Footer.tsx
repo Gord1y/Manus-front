@@ -11,7 +11,7 @@ const Footer: FC<PropsWithChildren<IFooter>> = ({ title, className }) => {
 	return (
 		<footer
 			className={cn(
-				'flex w-11/12 flex-col max-w-screen-xl mx-auto mt-14 mb-6 gap-1 sm:gap-3',
+				'flex w-11/12 flex-col max-w-screen-xl mx-auto pt-14 pb-6 gap-1 sm:gap-3',
 				className
 			)}
 		>

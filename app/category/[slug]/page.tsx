@@ -1,31 +1,29 @@
-'use client'
-
-import { usePathname, useRouter } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import Link from 'next/link'
 
 import { instance } from '@/src/api/api.interceptor'
 
-function CategoryBySlug() {
-	const pathname = usePathname()
-	const router = useRouter()
-	const [recipes, setRecipes] = useState([] as any)
-	useEffect(() => {
-		const fetchData = async () => {
-			const res = (await instance.get(pathname).catch(err => {
-				router.push('/404')
-			})) as any
-			setRecipes(res.data)
-		}
-		fetchData()
-	}, [pathname, router])
+async function getRecipesByCategory(slug: string) {
+	const recipes = await instance.get('category/' + slug)
+	if (recipes.data) {
+		return recipes.data
+	}
+}
 
+export default async function CategoryBySlug({
+	params
+}: {
+	params: { slug: string }
+}) {
+	const recipes = await getRecipesByCategory(params.slug)
 	return (
 		<>
 			{recipes.map((el: any) => {
-				return <div key={el.id}>{el.name}</div>
+				return (
+					<Link href={'/recipe/' + el.slug} key={el.id}>
+						{el.name}
+					</Link>
+				)
 			})}
 		</>
 	)
 }
-
-export default CategoryBySlug

@@ -1,25 +1,28 @@
-'use client'
-
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
 
 import { instance } from '@/src/api/api.interceptor'
 
-function Category() {
-	const [categories, setCategories] = useState([])
-	useEffect(() => {
-		const finc = async () => {
-			const res = await instance.get('category/all')
-			if (res.data) {
-				setCategories(res.data)
-			}
-		}
-		finc()
-	}, [])
+interface ICategory {
+	id: number
+	name: string
+	slug: string
+}
 
+async function getCategories() {
+	const categories = await instance<ICategory[]>({
+		method: 'GET',
+		url: 'category/all'
+	})
+	if (categories.data) {
+		return categories.data
+	}
+}
+
+export default async function Category() {
+	const categories = await getCategories()
 	return (
 		<div>
-			{categories.map((item: any) => {
+			{categories?.map((item: ICategory) => {
 				return (
 					<Link href={'/category/' + item.slug} key={item.id}>
 						{item.name}
@@ -29,5 +32,3 @@ function Category() {
 		</div>
 	)
 }
-
-export default Category

@@ -6,7 +6,7 @@ export interface IRecipe {
 	ingredients: Ingredient[]
 	description: string
 	instructions: string
-	images: string[]
+	image: string
 	categorySlug: string
 }
 

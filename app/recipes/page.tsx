@@ -23,7 +23,7 @@ async function getFirstRecipes() {
 		method: 'GET',
 		url: 'recipe',
 		params: {
-			take: 10,
+			take: 20,
 			skip: 0
 		}
 	})
@@ -61,10 +61,7 @@ export default async function RecipesPage() {
 					</Link>
 				</div>
 			</div>
-			<div>
-				<div>Recipes</div>
-				{recipes && <Recipes data={recipes} />}
-			</div>
+			<div>{recipes && <Recipes data={recipes} />}</div>
 		</>
 	)
 }

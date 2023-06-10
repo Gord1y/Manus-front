@@ -84,9 +84,9 @@ const Recipes = ({ data }: { data: IRecipe[] }) => {
 						<Link
 							href={`/recipe/${data.slug}`}
 							key={data.id}
-							className={cn('flex w-full flex-col', {
-								'md:flex-row': index % 2 === 0,
-								'md:flex-row-reverse': index % 2 !== 0
+							className={cn('flex w-full flex-col gap-5', {
+								'md:flex-row gap-0': index % 2 === 0,
+								'md:flex-row-reverse gap-0': index % 2 !== 0
 							})}
 						>
 							<Image
@@ -95,8 +95,8 @@ const Recipes = ({ data }: { data: IRecipe[] }) => {
 								className='w-full md:w-2/4 h-fit'
 							/>
 							<div className='flex flex-col gap-1 justify-center items-center w-full md:w-2/4'>
-								<p className='text-xl md:text-5xl'>{data.name}</p>
-								<p className='text-2xl'>{data.description}</p>
+								<p className='text-2xl md:text-5xl'>{data.name}</p>
+								<p className='text-lg md:text-2xl'>{data.description}</p>
 							</div>
 						</Link>
 						<Line className='my-2 md:my-8' />

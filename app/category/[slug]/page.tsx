@@ -42,8 +42,8 @@ export default async function CategoryBySlug({
 	return (
 		<>
 			{category && (
-				<div className='text-3xl text-center w-full'>
-					Category: {category[0].name}
+				<div className='text-2xl w-full text-center'>
+					Search recipes in category <b>{category[0].name}</b>
 				</div>
 			)}
 			{recipes && <Recipes data={recipes} slug={params.slug} />}

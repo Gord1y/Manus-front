@@ -1,9 +1,14 @@
 'use client'
 
+import cn from 'clsx'
+import Image from 'next/image'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import InfiniteScroll from 'react-infinite-scroll-component'
 
+import img from '@/public/1.jpg'
 import { instance } from '@/src/api/api.interceptor'
+import { Line } from '@/src/components/ui/Line'
 import { IRecipe } from '@/src/store/recipe.interface'
 
 const Recipes = ({ data, slug }: { data: IRecipe[]; slug: any }) => {
@@ -47,32 +52,56 @@ const Recipes = ({ data, slug }: { data: IRecipe[]; slug: any }) => {
 	}, [search, slug])
 
 	return (
-		<>
-			da
+		<div className='w-full mt-5'>
 			<input
 				type='text'
 				value={search}
 				onChange={e => {
 					setSearch(e.currentTarget.value)
 				}}
+				className='w-11/12 max-w-xs mt-1 px-3 py-1 border border-black rounded-md mx-auto block'
+				placeholder='Search...'
 			/>
 			<InfiniteScroll
 				dataLength={recipes.length}
 				next={getMoreRecipes}
 				hasMore={hasMore}
-				loader={<h3> Loading...</h3>}
-				endMessage={<h4>Nothing to show</h4>}
+				loader={
+					<div className='mt-2 w-full text-center text-2xl text-red-300'>
+						Loading...
+					</div>
+				}
+				endMessage={
+					<div className='w-full text-center text-2xl'>
+						Nothing more to show...
+					</div>
+				}
+				className='w-11/12 mx-auto flex-col flex justify-center align-center gap-2 mt-5'
 			>
-				{recipes.map(data => (
+				{recipes.map((data, index) => (
 					<div key={data.id}>
-						<div className='back'>
-							<strong> {data.id}</strong> {data.name}
-						</div>
-						{data.description}
+						<Link
+							href={`/recipe/${data.slug}`}
+							className={cn('flex w-full flex-col gap-5', {
+								'md:flex-row gap-0': index % 2 === 0,
+								'md:flex-row-reverse gap-0': index % 2 !== 0
+							})}
+						>
+							<Image
+								src={data.image || img}
+								alt={''}
+								className='w-full md:w-2/4 h-fit'
+							/>
+							<div className='flex flex-col gap-1 justify-center items-center w-full md:w-2/4'>
+								<p className='text-2xl md:text-5xl'>{data.name}</p>
+								<p className='text-lg md:text-2xl'>{data.description}</p>
+							</div>
+						</Link>
+						<Line className='my-2 md:my-8' />
 					</div>
 				))}
 			</InfiniteScroll>
-		</>
+		</div>
 	)
 }
 

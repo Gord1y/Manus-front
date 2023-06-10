@@ -12,7 +12,7 @@ export default function RecipeLayout({
 	return (
 		<>
 			<Header title={siteName} />
-			<Main>{children}</Main>
+			<Main className='max-w-screen-xl mx-auto'>{children}</Main>
 			<Footer title={siteName} />
 		</>
 	)

@@ -77,13 +77,12 @@ const Recipes = ({ data }: { data: IRecipe[] }) => {
 						Nothing more to show...
 					</div>
 				}
-				className='w-11/12 mx-auto flex-col flex justify-center align-center gap-2 mt-5 h-fit overflow-hidden'
+				className='w-11/12 mx-auto flex-col flex justify-center align-center gap-2 mt-5'
 			>
 				{recipes.map((data, index) => (
-					<>
+					<div key={data.id}>
 						<Link
 							href={`/recipe/${data.slug}`}
-							key={data.id}
 							className={cn('flex w-full flex-col gap-5', {
 								'md:flex-row gap-0': index % 2 === 0,
 								'md:flex-row-reverse gap-0': index % 2 !== 0
@@ -100,7 +99,7 @@ const Recipes = ({ data }: { data: IRecipe[] }) => {
 							</div>
 						</Link>
 						<Line className='my-2 md:my-8' />
-					</>
+					</div>
 				))}
 			</InfiniteScroll>
 		</div>

@@ -11,7 +11,7 @@ export default function RecipeLayout({
 	const siteName = 'Manus'
 	return (
 		<>
-			<Header title={siteName} />
+			<Header />
 			<Main>{children}</Main>
 			<Footer title={siteName} />
 		</>

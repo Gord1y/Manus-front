@@ -11,7 +11,7 @@ export default function RecipeLayout({
 	const siteName = 'Manus'
 	return (
 		<>
-			<Header title={siteName} />
+			<Header />
 			<Main className='max-w-screen-xl mx-auto'>{children}</Main>
 			<Footer title={siteName} />
 		</>

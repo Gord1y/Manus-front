@@ -61,7 +61,7 @@ export default async function RecipesPage() {
 					</Link>
 				</div>
 			</div>
-			<div>{recipes && <Recipes data={recipes} />}</div>
+			{recipes && <Recipes data={recipes} />}
 		</>
 	)
 }

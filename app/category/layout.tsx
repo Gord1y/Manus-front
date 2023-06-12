@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import Footer from '@/src/components/layout/Footer'
 import Header from '@/src/components/layout/Header'
 import Main from '@/src/components/layout/Main'
@@ -11,7 +13,9 @@ export default function CategoryLayout({
 	const siteName = 'Manus'
 	return (
 		<>
-			<Header title={siteName} />
+			<Header>
+				<Link href='/recipes'>All recipes</Link>
+			</Header>
 			<Main>{children}</Main>
 			<Footer title={siteName} />
 		</>

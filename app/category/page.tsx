@@ -18,13 +18,13 @@ export default async function Category() {
 	return (
 		<div className='w-full overflow-hidden'>
 			<div className='flex w-full justify-center text-2xl'>Categories</div>
-			<div className='flex gap-2 items-center w-11/12 overflow-x-auto flex-wrap justify-center mx-auto mt-3'>
+			<div className='w-full max-w-screen-lg mx-auto flex flex-wrap gap-2 flex-row items-center justify-center mt-3'>
 				{categories?.map((item: ICategory) => {
 					return (
 						<Link
 							href={'category/' + item.slug}
 							key={item.id}
-							className='w-24 min-w-fit py-2 text-lg px-2 border border-black rounded-md hover:bg-gray-200 text-center'
+							className='w-1/4 text-center py-2 px-4 border border-black rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-900 hover:text-white'
 						>
 							{item.name}
 						</Link>

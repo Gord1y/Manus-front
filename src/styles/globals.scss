@@ -69,3 +69,24 @@ select {
 		scroll-behavior: auto !important;
 	}
 }
+
+/* Works on Firefox */
+* {
+	scrollbar-width: thin;
+	scrollbar-color: black rgb(242, 237, 231);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+	width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+	background: rgb(242, 237, 231);
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: black;
+	border-radius: 15px;
+	border: 2px solid rgb(242, 237, 231);
+}

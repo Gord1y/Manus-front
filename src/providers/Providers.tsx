@@ -3,6 +3,7 @@ import { PropsWithChildren } from 'react'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
 
+import AuthProvider from './auth-provider/AuthProvider'
 import { persistor, store } from '@/src/store/store'
 
 const queryClient = new QueryClient({

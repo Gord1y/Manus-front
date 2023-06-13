@@ -2,12 +2,13 @@ import cn from 'clsx'
 import Link from 'next/link'
 import { FC, PropsWithChildren } from 'react'
 
+import { SITE_NAME } from '@/src/constans/app.constants'
+
 interface IFooter {
-	title: string
 	className?: string
 }
 
-const Footer: FC<PropsWithChildren<IFooter>> = ({ title, className }) => {
+const Footer: FC<PropsWithChildren<IFooter>> = ({ className }) => {
 	return (
 		<footer
 			className={cn(
@@ -17,7 +18,7 @@ const Footer: FC<PropsWithChildren<IFooter>> = ({ title, className }) => {
 		>
 			<div className='w-full h-px bg-black' />
 			<div className='flex justify-between flex-row text-xs sm:text-sm'>
-				<p className='text-grey'>© {title} 2023 All Rights Reserved.</p>
+				<p className='text-grey'>© {SITE_NAME}. 2023 All Rights Reserved.</p>
 				<Link href='/policy'>Policy page</Link>
 			</div>
 		</footer>

@@ -31,7 +31,7 @@ const AuthProvider: FC<PropsWithChildren<unknown>> = ({ children }) => {
 		if (!refreshToken && user) {
 			logout()
 		}
-	}, [logout, pathname, user])
+	}, [pathname])
 
 	const router = useRouter()
 
@@ -46,6 +46,8 @@ const AuthProvider: FC<PropsWithChildren<unknown>> = ({ children }) => {
 	if (user && isProtectedRoute) return <>{children}</>
 
 	if (user && isAdminRoute) <NotFound />
+
+	if (pathname !== '/auth') router.push('/auth')
 
 	return null
 }

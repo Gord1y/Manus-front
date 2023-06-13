@@ -4,6 +4,7 @@ import { Titillium_Web } from 'next/font/google'
 import { getSiteUrl } from '../config/url.config'
 import { SITE_NAME } from '../constans/app.constants'
 
+import Providers from '@/src/providers/Providers'
 import '@/src/styles/globals.scss'
 
 const Titillium = Titillium_Web({
@@ -34,7 +35,9 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang='en'>
-			<body className={Titillium.className}>{children}</body>
+			<body className={Titillium.className}>
+				<Providers>{children}</Providers>
+			</body>
 		</html>
 	)
 }

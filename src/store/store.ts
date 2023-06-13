@@ -28,7 +28,7 @@ if (isClient) {
 		storage
 	}
 
-	mainReducer = persistReducer(persistConfig, combineReducers)
+	mainReducer = persistReducer(persistConfig, combinedReducers)
 }
 
 export const store = configureStore({

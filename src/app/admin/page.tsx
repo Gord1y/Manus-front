@@ -7,7 +7,6 @@ import Main from '@/src/components/layout/Main'
 import Home from '@/src/components/pages/Home'
 
 const HomePage: FC = () => {
-	const siteName = 'Manus'
 	return (
 		<>
 			<Header>
@@ -16,7 +15,7 @@ const HomePage: FC = () => {
 			<Main>
 				<Home />
 			</Main>
-			<Footer title={siteName} />
+			<Footer />
 		</>
 	)
 }

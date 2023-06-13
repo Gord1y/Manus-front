@@ -1,4 +1,6 @@
-import { useRouter } from 'next/router'
+'use client'
+
+import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 
 import { useAuth } from './useAuth'
@@ -11,5 +13,5 @@ export const useAuthRedirect = () => {
 		if (user) {
 			router.replace('/dashboard')
 		}
-	}, [router, user])
+	}, [user])
 }

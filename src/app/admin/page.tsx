@@ -10,7 +10,7 @@ const HomePage: FC = () => {
 	const siteName = 'Manus'
 	return (
 		<>
-			<Header title={siteName}>
+			<Header>
 				<Link href='/recipes'>Open Recipes</Link>
 			</Header>
 			<Main>

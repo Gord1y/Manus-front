@@ -8,12 +8,11 @@ export default function RecipeLayout({
 }: {
 	children: React.ReactNode
 }) {
-	const siteName = 'Manus'
 	return (
 		<>
 			<Header />
 			<Main className='max-w-screen-xl mx-auto'>{children}</Main>
-			<Footer title={siteName} />
+			<Footer />
 		</>
 	)
 }

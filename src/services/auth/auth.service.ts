@@ -1,6 +1,6 @@
 import { SaveToStorage, getRefreshToken } from './auth.helper'
 import { instance } from '@/src/api/api.interceptor'
-import { IAuthResponse, IUserLogin } from '@/src/store/user.interface'
+import { IAuthResponse, IUserLogin } from '@/src/store/user/user.interface'
 
 export const AuthService = {
 	async main(data: IUserLogin) {

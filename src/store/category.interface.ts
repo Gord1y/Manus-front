@@ -3,3 +3,12 @@ export interface ICategory {
 	name: string
 	slug: string
 }
+
+export interface ICategoryCreate {
+	name: string
+}
+
+export interface ICategoryUpdate {
+	name: string
+	slug: string
+}

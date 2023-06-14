@@ -1,23 +1,37 @@
-import Link from 'next/link'
-import { FC } from 'react'
+import Categories from './Categories'
+import Recipes from './Recipes'
+import { instance } from '@/src/api/api.interceptor'
+import { ICategory } from '@/src/store/category.interface'
+import { IRecipe } from '@/src/store/recipe.interface'
 
-import Footer from '@/src/components/layout/Footer'
-import Header from '@/src/components/layout/Header'
-import Main from '@/src/components/layout/Main'
-import Home from '@/src/components/pages/Home'
+async function getAllCategories() {
+	const categories = await instance<ICategory[]>({
+		method: 'GET',
+		url: 'category/all'
+	})
+	if (categories.data) {
+		return categories.data
+	}
+}
 
-const HomePage: FC = () => {
+async function getAllRecipes() {
+	const categories = await instance<IRecipe[]>({
+		method: 'GET',
+		url: 'recipe/all'
+	})
+	if (categories.data) {
+		return categories.data
+	}
+}
+
+export default async function AdminPage() {
+	const categories = await getAllCategories()
+	const recipes = await getAllRecipes()
 	return (
 		<>
-			<Header>
-				<Link href='/recipes'>Open Recipes</Link>
-			</Header>
-			<Main>
-				<Home />
-			</Main>
-			<Footer />
+			<h1 className='w-full text-center text-2xl'>Admin Panel</h1>
+			{categories && <Categories categories={categories} />}
+			{recipes && <Recipes recipes={recipes} />}
 		</>
 	)
 }
-
-export default HomePage

@@ -47,7 +47,7 @@ export default async function RecipesPage() {
 							<Link
 								href={'category/' + item.slug}
 								key={item.id}
-								className='w-24 min-w-fit py-2 text-lg px-2 border border-black rounded-md hover:bg-gray-200 text-center'
+								className='w-24 min-w-fit py-2 text-lg px-2 border border-black rounded-md hover:bg-black/10 text-center'
 							>
 								{item.name}
 							</Link>
@@ -55,7 +55,7 @@ export default async function RecipesPage() {
 					})}
 					<Link
 						href='/category'
-						className='w-24 min-w-fit py-2 text-lg px-2 border border-black rounded-md hover:bg-gray-200 text-center'
+						className='w-24 min-w-fit py-2 text-lg px-2 border border-black rounded-md hover:bg-black/10 text-center'
 					>
 						All categories
 					</Link>

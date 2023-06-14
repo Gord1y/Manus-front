@@ -24,7 +24,7 @@ export default async function Category() {
 						<Link
 							href={'category/' + item.slug}
 							key={item.id}
-							className='w-1/4 text-center py-2 px-4 border border-black rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-900 hover:text-white'
+							className='w-1/4 min-w-fit text-center py-2 px-4 border border-black rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-black/10'
 						>
 							{item.name}
 						</Link>

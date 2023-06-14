@@ -6,7 +6,7 @@ interface IMain {
 }
 
 const Main: FC<PropsWithChildren<IMain>> = ({ children, className }) => {
-	return <main className={cn('py-14 sm:py-20', className)}>{children}</main>
+	return <main className={cn('py-14 sm:py-21', className)}>{children}</main>
 }
 
 export default Main

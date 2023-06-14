@@ -37,6 +37,7 @@ export default function RootLayout({
 		<html lang='en'>
 			<body className={Titillium.className}>
 				<Providers>{children}</Providers>
+				<div id='modal-portal' />
 			</body>
 		</html>
 	)

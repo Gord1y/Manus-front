@@ -11,6 +11,10 @@ module.exports = {
 	theme: {
 		colors,
 		extend: {
+			spacing: {
+				21: '5.25rem',
+				22: '5.5rem'
+			},
 			fontSize: {
 				xxs: '0.65rem',
 				xs: '0.82rem',

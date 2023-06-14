@@ -13,7 +13,6 @@ export const Login: FC = () => {
 	const {
 		register: registerForm,
 		handleSubmit,
-		setError,
 		formState: { errors }
 	} = useForm<IUserLogin>({
 		mode: 'onChange'

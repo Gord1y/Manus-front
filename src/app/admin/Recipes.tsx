@@ -11,7 +11,7 @@ import { IRecipe } from '@/src/store/recipe.interface'
 const Recipes = ({ recipes }: { recipes: IRecipe[] }) => {
 	const [search, setSearch] = useState('')
 	return (
-		<div className='w-full overflow-hidden'>
+		<div className='w-full overflow-hidden mt-3'>
 			<div className='text-2xl w-full text-center'>Recipes</div>
 			<input
 				type='text'

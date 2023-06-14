@@ -14,17 +14,11 @@ export default function Auth() {
 				<button
 					type='button'
 					className=' absolute left-5 top-5'
-					onClick={() => router.back()}
+					onClick={() => router.push('/')}
 				>
 					← Back
 				</button>
 				<Login />
-				{/* <button
-					className='mt-5 text-grey w-fit'
-					onClick={() => router.push('/forgot-password')}
-				>
-					forgot password
-				</button> */}
 			</div>
 		</div>
 	)

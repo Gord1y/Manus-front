@@ -1,6 +1,4 @@
-import axios from 'axios'
-
-import { getAccessToken, saveUser } from '../auth/auth.helper'
+import { saveUser } from '../auth/auth.helper'
 
 import { instance } from '@/src/api/api.interceptor'
 import { IUser, IUserUpdate } from '@/src/store/user/user.interface'

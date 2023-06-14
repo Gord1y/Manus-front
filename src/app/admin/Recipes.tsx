@@ -23,6 +23,18 @@ const Recipes = ({ recipes }: { recipes: IRecipe[] }) => {
 				placeholder='Search by name...'
 			/>
 			<div className='w-11/12 max-w-screen-md mx-auto flex-col flex justify-center align-center gap-2 mt-5'>
+				<div>
+					<div className='flex w-full flex-col md:flex-row gap-0'>
+						<Image src={img} alt={''} className='w-full md:w-2/4 h-fit' />
+						<div className='flex flex-col gap-1 justify-center items-center w-full md:w-2/4'>
+							<p className='text-xl md:text-2xl'>Create new delicious recipe</p>
+							<button className='bg-black text-white px-3 py-1 rounded-md'>
+								Create
+							</button>
+						</div>
+					</div>
+					<Line className='my-1 md:my-4' />
+				</div>
 				{recipes
 					.filter(data => data.name.includes(search))
 					.map((data, index) => (
@@ -49,6 +61,7 @@ const Recipes = ({ recipes }: { recipes: IRecipe[] }) => {
 							<Line className='my-1 md:my-4' />
 						</div>
 					))}
+				<div className='text-center w-full'>Nothing here :)</div>
 			</div>
 		</div>
 	)

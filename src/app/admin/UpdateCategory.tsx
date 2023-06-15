@@ -19,10 +19,7 @@ export const UpdateCategory = ({ category }: { category: ICategory }) => {
 		formState: { errors }
 	} = useForm<ICategoryUpdate>({
 		mode: 'onChange',
-		defaultValues: {
-			name: category.name,
-			slug: category.slug
-		}
+		defaultValues: category
 	})
 
 	const onSubmit: SubmitHandler<ICategoryUpdate> = async data => {

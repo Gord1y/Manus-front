@@ -6,7 +6,7 @@ import { instance } from '@/src/api/api.interceptor'
 import Field from '@/src/components/ui/input/Field'
 import { ICategoryCreate } from '@/src/store/category.interface'
 
-export const CreateNewCategory = () => {
+export const CreateCategory = () => {
 	const [visible, setVisible] = useState(false)
 	const showPopUp = () => setVisible(true)
 	const hidePopUp = () => {

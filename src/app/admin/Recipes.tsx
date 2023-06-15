@@ -4,6 +4,8 @@ import cn from 'clsx'
 import Image from 'next/image'
 import { useState } from 'react'
 
+import { CreateRecipe } from './CreateRecipe'
+import { UpdateRecipe } from './UpdateRecipe'
 import img from '@/public/1.jpg'
 import { Line } from '@/src/components/ui/Line'
 import { IRecipe } from '@/src/store/recipe.interface'
@@ -23,18 +25,7 @@ const Recipes = ({ recipes }: { recipes: IRecipe[] }) => {
 				placeholder='Search by name...'
 			/>
 			<div className='w-11/12 max-w-screen-md mx-auto flex-col flex justify-center align-center gap-2 mt-5'>
-				<div>
-					<div className='flex w-full flex-col md:flex-row gap-0'>
-						<Image src={img} alt={''} className='w-full md:w-2/4 h-fit' />
-						<div className='flex flex-col gap-1 justify-center items-center w-full md:w-2/4'>
-							<p className='text-xl md:text-2xl'>Create new delicious recipe</p>
-							<button className='bg-black text-white px-3 py-1 rounded-md'>
-								Create
-							</button>
-						</div>
-					</div>
-					<Line className='my-1 md:my-4' />
-				</div>
+				<CreateRecipe />
 				{recipes
 					.filter(data => data.name.includes(search))
 					.map((data, index) => (
@@ -53,9 +44,7 @@ const Recipes = ({ recipes }: { recipes: IRecipe[] }) => {
 								<div className='flex flex-col gap-1 justify-center items-center w-full md:w-2/4'>
 									<p className='text-2xl md:text-5xl'>{data.name}</p>
 									<p className='text-lg md:text-2xl'>{data.description}</p>
-									<button className='bg-black text-white px-3 py-1 rounded-md'>
-										Edit
-									</button>
+									<UpdateRecipe recipe={data} />
 								</div>
 							</div>
 							<Line className='my-1 md:my-4' />

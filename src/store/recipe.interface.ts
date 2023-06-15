@@ -1,6 +1,5 @@
 export interface IRecipe {
 	id: number
-	createdAt: string
 	name: string
 	slug: string
 	ingredients: Ingredient[]

@@ -21,6 +21,7 @@ export const removeStorage = () => {
 	Cookies.remove(ACCESS_TOKEN)
 	Cookies.remove(REFRESH_TOKEN)
 	localStorage.removeItem('user')
+	console.log('removeStorage')
 }
 
 export const saveUser = (data: IUser) => {

@@ -1,4 +1,18 @@
 /** @type {import('next').NextConfig} */
-module.exports = {
-	basePath: '/manus'
+const nextConfig = {
+	swcMinify: true,
+	basePath: '/manus',
+
+	async redirects() {
+		return [
+			{
+				source: '/',
+				destination: '/manus/',
+				permanent: true,
+				basePath: false
+			}
+		]
+	}
 }
+
+module.exports = nextConfig

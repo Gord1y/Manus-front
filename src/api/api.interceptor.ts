@@ -4,7 +4,7 @@ import { errorCatch, getContentType } from './api.helper'
 import { getAccessToken, removeStorage } from '@/src/services/auth/auth.helper'
 
 export const instance = axios.create({
-	baseURL: process.env.SERVER_URL,
+	baseURL: process.env.NEXT_PUBLIC_SERVER_URL,
 	headers: getContentType()
 })
 

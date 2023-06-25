@@ -1,6 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 
-const twcolors = require('tailwindcss/colors')
+let twcolors = require('tailwindcss/colors')
+
+delete twcolors['lightBlue']
+delete twcolors['warmGray']
+delete twcolors['trueGray']
+delete twcolors['coolGray']
+delete twcolors['blueGray']
+twcolors = { ...twcolors, ...{ transparent: 'transparent' } }
+
 const colors = {
 	...twcolors,
 	background: '#F2EDE7'

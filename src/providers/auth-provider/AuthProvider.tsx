@@ -31,7 +31,7 @@ const AuthProvider: FC<PropsWithChildren<unknown>> = ({ children }) => {
 		if (!refreshToken && user) {
 			logout()
 		}
-	}, [pathname])
+	}, [logout, pathname, user])
 
 	const router = useRouter()
 

@@ -13,5 +13,5 @@ export const useAuthRedirect = () => {
 		if (user) {
 			router.replace('/dashboard')
 		}
-	}, [user])
+	}, [router, user])
 }
